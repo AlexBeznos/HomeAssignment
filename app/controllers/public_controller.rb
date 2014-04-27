@@ -1,9 +1,9 @@
 class PublicController < ApplicationController
   def index
-    uploaded_io = params[:file]
-    File.open(Rails.root.join('public', 'uploads', uploaded_io), 'wb') do |file|
-      file.write(uploaded_io.read)
-    end
   end
 
+  def admin
+  	File.new("public/text.txt", "r").each { |line| @some = line }
+  	@docc = "Docl" 
+  end
 end
