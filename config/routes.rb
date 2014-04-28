@@ -1,6 +1,6 @@
 HW::Application.routes.draw do
   get 'public/index'
-  get 'public/admin'
+  get 'public/admin', as: :admin_path
   root 'public#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

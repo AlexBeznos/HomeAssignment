@@ -4,6 +4,7 @@ class PublicController < ApplicationController
 
   def admin
   	File.new("public/text.txt", "r").each { |line| @some = line }
-  	@docc = "Docl" 
+  	redirect_to root_path
+  	flash[:notice] = "Success!"
   end
 end
