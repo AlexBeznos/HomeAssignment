@@ -3,7 +3,9 @@ class PublicController < ApplicationController
   end
 
   def admin
-  	File.new("public/text.txt", "r").each { |line| @some = line }
+  	Robot.delete_all
+  	Feature.delete_all
+  	File.new("public/text.txt", "r").each { |line| Public.processor(line) }
   	redirect_to root_path
   	flash[:notice] = "Success!"
   end
