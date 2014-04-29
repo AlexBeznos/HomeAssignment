@@ -11,6 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140429123432) do
+
+  create_table "features", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "features_robots", force: true do |t|
+    t.integer "robot_id"
+    t.integer "feature_id"
+  end
+
+  create_table "robots", force: true do |t|
+    t.string "name"
+  end
 
 end
