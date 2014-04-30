@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'slim'
+gem 'uikitrails', github: 'Dirk82/uikitrails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

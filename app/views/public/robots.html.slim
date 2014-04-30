@@ -1,5 +1,6 @@
-h1 Robots
+<h2> Find ideal robot for you:</h2>
 - @robot_id.length.times do |i|
-  p
-    = @robots.find(@robot_id[i]).name
-    = @percent[i]
+   .uk-panel.uk-panel-box
+    .uk-panel-title= @robots.find(@robot_id[i]).name
+    .uk-progress
+      .uk-progress-bar(style='width: #{@percent[i]}%;') #{@percent[i]}%

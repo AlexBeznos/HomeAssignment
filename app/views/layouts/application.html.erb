@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HW</title>
+  <title>MedRobots</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div id="head">
+	<div class="uk-width-1-2 uk-align-center uk-animation-fade">
+		<center><%= image_tag "robot.png", :style=>" width: 300px; height: 300px" %>
+		  <h1><%= link_to "MedRobots", root_path %></h1>
+		  <h3>You be in need for MedRobot even now!</h3>
+		</center>
+    </div>
+</div>
+<div class="uk-width-1-2 uk-align-center">
+  <%= yield %>
+</div>
+<div class="uk-width-1-1 footer">
+	<div class="uk-width-1-3 uk-align-center"><center>Created by Alexand Beznos<br>To restart the base click to the <%= link_to "link", :admin_path %></center>
+	</div>
+</div>
+</end>
 
 </body>
 </html>

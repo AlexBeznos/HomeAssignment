@@ -24,6 +24,6 @@ class PublicController < ApplicationController
   	Feature.delete_all
   	File.new("public/text.txt", "r").each { |line| Public.processor(line) }
   	redirect_to root_path
-  	flash[:notice] = "Success!"
+  	flash[:notice] = "Successful database upgrading! Congratulations!"
   end
 end

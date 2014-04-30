@@ -1,13 +1,22 @@
-<h1> Public#index</h1>
-
-
-<%= flash[:notice] if flash[:notice] %>
-<%= link_to "Admin", :admin_path %>
-
-<%= form_tag(controller: "public", action: "robots") do %>
-  <% feature_arr = Feature.all.map { |feature| [feature.name, feature.id] }%>
-  <% 10.times do |i| %>
-    <p>Feature <%= i + 1 %>: <%= select_tag(:feature[i], options_for_select(feature_arr)) %></p>
-  <% end %>
-  <%= submit_tag "Create" %>
+<% if flash[:notice] %>
+  <div class="uk-alert uk-alert-success"><%= flash[:notice] %></div>
 <% end %>
+
+<div class="uk-grid">
+    <div class="uk-width-medium-1-2">
+        <div class="uk-panel"><h3>Hello, everyone!</h3>We work to be usefull for you! To improve your life! To make your life much better and easier!<br>Your robots will give you THE BEST user expirience on the market.</div>
+    </div>
+    <div class="uk-width-medium-1-2">
+        <div class="uk-panel">This magical robots can do absolutely everything what you ask them. You will become happy immediately after buying it.</div>
+    </div>
+</div>
+<div class="uk-panel uk-panel-box uk-panel-box-primary box">
+  <h4>Try to find robot exectly for you!</h4>
+  <%= form_tag(controller: "public", action: "robots") do %>
+    <% feature_arr = Feature.all.map { |feature| [feature.name, feature.id] }%>
+    <% 10.times do |i| %>	
+        Choose feature #<%= i + 1 %>: <%= select_tag(:feature[i], options_for_select(feature_arr), :class => 'uk-button uk-button-primary') %><br><br>
+    <% end %>
+    <%= submit_tag "Create", :class => "uk-button uk-button-success uk-width-1-1" %>
+  <% end %>
+ </div>
