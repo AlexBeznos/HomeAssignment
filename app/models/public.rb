@@ -2,10 +2,20 @@ class Public
 
   def self.percenter(robot, feature_id)
     percent = 0
-    feature_id.each do |k|
+    feature_id.each do |k|      
       percent +=1 unless robot.features.find_by(name: Feature.find(k).name).nil?
     end
     return percent*10
+  end
+
+  def self.repeats(array)
+  	k = 0
+  	for i in 0..array.length do
+  		for j in 0..array.length do
+          k +=1 if array[i] == array[j]
+        end
+    end
+    return k
   end
 
   def self.processor(line)

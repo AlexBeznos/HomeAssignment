@@ -1,5 +1,7 @@
 <% if flash[:notice] %>
   <div class="uk-alert uk-alert-success"><%= flash[:notice] %></div>
+<% elsif flash[:error]  %>
+  <div class="uk-alert uk-alert-danger"><%= flash[:error] %></div>
 <% end %>
 
 <div class="uk-grid">
