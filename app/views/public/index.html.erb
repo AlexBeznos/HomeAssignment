@@ -1,3 +1,13 @@
-<h1>Public#index</h1>
+<h1> Public#index</h1>
+
+
 <%= flash[:notice] if flash[:notice] %>
 <%= link_to "Admin", :admin_path %>
+
+<%= form_tag(controller: "public", action: "robots") do %>
+  <% feature_arr = Feature.all.map { |feature| [feature.name, feature.id] }%>
+  <% 10.times do |i| %>
+    <p>Feature <%= i + 1 %>: <%= select_tag(:feature[i], options_for_select(feature_arr)) %></p>
+  <% end %>
+  <%= submit_tag "Create" %>
+<% end %>

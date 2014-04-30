@@ -1,5 +1,13 @@
 class Public
 
+  def self.percenter(robot, feature_id)
+    percent = 0
+    feature_id.each do |k|
+      percent +=1 unless robot.features.find_by(name: Feature.find(k).name).nil?
+    end
+    return percent*10
+  end
+
   def self.processor(line)
   	i = 0
     arr = line.scan(/[\w']+/)
