@@ -16,16 +16,12 @@ class PublicController < ApplicationController
   	  @percent[j] = Public.percenter(i, arr)
       @robot_id[j] = i.id
     end
-    if Public.repeats(arr) != arr.length+1
-    	redirect_to root_path
-    	flash[:error] = "Try to put only unique features and don't repeat yourself))"
-    end
     @robots = Robot.all
   end
 
   def admin
   	Robot.destroy_all
-  	Feature.delete_all
+  	Feature.destroy_all
   	File.new("public/text.txt", "r").each { |line| Public.processor(line) }
   	redirect_to root_path
   	flash[:notice] = "Successful database upgrading! Congratulations!"
