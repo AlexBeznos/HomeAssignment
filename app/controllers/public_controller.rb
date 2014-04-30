@@ -9,7 +9,7 @@ class PublicController < ApplicationController
   	@percent = []
   	@robot_id = []
   	10.times do |k| 
-  		arr[k] = params[:feature_id[k]] unless params[:feature_id[k]].nil?
+  		arr[k] = params[:abcdifghij_id[k]]
   	end
   	Robot.all.each do |i| 
   	  j+=1

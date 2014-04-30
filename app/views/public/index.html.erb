@@ -15,7 +15,7 @@
   <%= form_tag(controller: "public", action: "robots") do %>
     <% feature_arr = Feature.all.map { |feature| [feature.name, feature.id] }%>
     <% 10.times do |i| %>	
-        Choose feature #<%= i + 1 %>: <%= select_tag(:feature[i], options_for_select(feature_arr), :class => 'uk-button uk-button-primary') %><br><br>
+        Choose feature #<%= i + 1 %>: <%= select_tag(:abcdifghij[i], options_for_select(feature_arr), :class => 'uk-button uk-button-primary') %><br><br>
     <% end %>
     <%= submit_tag "Create", :class => "uk-button uk-button-success uk-width-1-1" %>
   <% end %>
