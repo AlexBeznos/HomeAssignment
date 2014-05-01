@@ -15,6 +15,8 @@ class Public
           k +=1 if array[i] == array[j]
         end
     end
+    puts k
+    puts array.length
     return k
   end
 

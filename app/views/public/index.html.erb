@@ -1,7 +1,7 @@
 <% if flash[:notice] %>
   <div class="uk-alert uk-alert-success"><%= flash[:notice] %></div>
-<% elsif flash[:error]  %>
-  <div class="uk-alert uk-alert-danger"><%= flash[:error] %></div>
+<% elsif flash[:alert]  %>
+  <div class="uk-alert uk-alert-danger"><%= flash[:alert] %></div>
 <% end %>
 
 <div class="uk-grid">
@@ -19,6 +19,6 @@
     <% 10.times do |i| %>	
         Choose feature #<%= i + 1 %>: <%= select_tag(:abcdifghij[i], options_for_select(feature_arr), :class => 'uk-button uk-button-primary') %><br><br>
     <% end %>
-    <%= submit_tag "Create", :class => "uk-button uk-button-success uk-width-1-1" %>
+    <%= submit_tag "Find a Robot for me :)", :class => "uk-button uk-button-success uk-width-1-1" %>
   <% end %>
  </div>

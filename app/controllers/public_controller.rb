@@ -1,29 +1,33 @@
 class PublicController < ApplicationController
+  $time = 0 # Variable to count how many times were used action "restore". I use it because restoring make displacement to one unit
   def index
-    
   end
 
   def robots
   	j = -1
-  	arr = []
+    arr = []
   	@percent = []
-  	@robot_id = []
-  	10.times do |k| 
-  		arr[k] = params[:abcdifghij_id[k]]
-  	end
-  	Robot.all.each do |i| 
-  	  j+=1
+    @robot_id = []
+    @robots = Robot.all
+    
+  	10.times { |k| arr[k] = params[:abcdifghij_id[k]] }
+
+  	@robots.each do |i|
+      j += 1 
   	  @percent[j] = Public.percenter(i, arr)
       @robot_id[j] = i.id
     end
-    @robots = Robot.all
+
+    if Public.repeats(arr) != arr.length + $time
+    	redirect_to root_path, alert: "Try to put only unique features and don't repeat yourself :)"
+    end
   end
 
-  def admin
+  def restore
+    $time += 1
   	Robot.destroy_all
   	Feature.destroy_all
   	File.new("public/text.txt", "r").each { |line| Public.processor(line) }
-  	redirect_to root_path
-  	flash[:notice] = "Successful database upgrading! Congratulations!"
+  	redirect_to root_path, notice: "Successful database upgrading! Congratulations!"
   end
 end
