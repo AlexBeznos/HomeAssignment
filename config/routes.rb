@@ -1,5 +1,5 @@
 HW::Application.routes.draw do
-  get 'public/restor', as: :restore
+  get 'public/restore', as: :restore
   post 'public/robots', as: :robots_path
   root 'public#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -2,21 +2,20 @@ class Public
 
   def self.percenter(robot, feature_id)
     percent = 0
-    feature_id.each do |k|      
-      percent +=1 unless robot.features.find_by(name: Feature.find(k).name).nil?
+    feature_id.each do |k|
+      percent += 1 unless robot.features.find_by(name: Feature.find(k).name).nil?
     end
-    return percent*10
+    return percent * 10
   end
 
   def self.repeats(array)
   	k = 0
-  	for i in 0..array.length do
-  		for j in 0..array.length do
-          k +=1 if array[i] == array[j]
-        end
+  	for i in 0..array.length-1 do
+  		for j in i+1..array.length do
+        k +=1 if array[i] == array[j]
+      end
     end
     puts k
-    puts array.length
     return k
   end
 
@@ -25,7 +24,7 @@ class Public
     arr = line.scan(/[\w']+/)
     name = ""
     arr.each do |word|
-      i += 1 
+      i += 1
       name = word if i == 1
       if i == 1
       	Robot.create(name: word)
