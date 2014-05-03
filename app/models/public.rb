@@ -12,14 +12,9 @@ class Public
   	k = 0
   	for i in 0..array.length-2 do
   		for j in i+1..array.length-1 do
-        puts "#{array[i]} + #{array[j]}"
         k += 1 if array[i] == array[j]
       end
-      puts ""
     end
-    puts "Hello, here is number of repeats"
-    puts k
-    puts "This is end"
     return k
   end
 

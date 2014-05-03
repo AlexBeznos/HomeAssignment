@@ -12,10 +12,10 @@ class PublicController < ApplicationController
   	10.times { |k| arr[k] = params[:abcdefghij_id[k]] }
 
     if Public.repeats(arr) == 1
-      @robots.each do |i|
+      @robots.each do |robot|
         j += 1 
-        @percent[j] = Public.percenter(i, arr)
-        @robot_id[j] = i.id
+        @percent[j] = Public.percenter(robot, arr)
+        @robot_id[j] = robot.id
       end
     else
       redirect_to root_path, alert: "Try to put only unique features and don't repeat yourself :)"
