@@ -1,7 +1,3 @@
 == Task:
 
 To make an application for convenient looking for robots depends on their features. Whole robot's data should be taken from text file on the hard drive.
-
-//todo:
-* To make possibility to choose robot depends only on few features
-* Give an apportunity to put coefficiens to different groups of features

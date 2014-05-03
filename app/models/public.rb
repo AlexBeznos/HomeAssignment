@@ -1,11 +1,13 @@
 class Public
 
   def self.percenter(robot, feature_id)
+    m = robot.features.length
+    puts "Robot length #{m}"
     percent = 0
     feature_id.each do |k|
       percent += 1 unless robot.features.find_by(name: Feature.find(k).name).nil?
     end
-    return percent * 10
+    return (percent + (10 - m)) * 10 
   end
 
   def self.repeats(array)
@@ -15,6 +17,7 @@ class Public
         k += 1 if array[i] == array[j]
       end
     end
+    puts "Hello this is #{k}"
     return k
   end
 

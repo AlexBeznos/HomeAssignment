@@ -11,7 +11,7 @@ class PublicController < ApplicationController
 
   	10.times { |k| arr[k] = params[:abcdefghij_id[k]] }
 
-    if Public.repeats(arr) == 1
+    if Public.repeats(arr) == 0
       @robots.each do |robot|
         j += 1 
         @percent[j] = Public.percenter(robot, arr)
